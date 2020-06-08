@@ -18,7 +18,20 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(jpg|jpeg|png|gif|ico)$/,
+        exclude: /node_modules/,
+        loader: 'file-loader',
+      },
     ],
+  },
+  devServer: {
+    hot: true,
+    historyApiFallback: true,
+    stats: {
+      colors: true,
+    },
+    clientLogLevel: 'debug',
   },
   plugins: [
     new HtmlWebPackPlugin({
