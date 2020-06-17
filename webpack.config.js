@@ -1,6 +1,16 @@
+const path = require('path');
+const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.json'],
+  },
   module: {
     rules: [
       {
@@ -15,6 +25,9 @@ module.exports = {
         use: [
           {
             loader: 'html-loader',
+            options: {
+              minimize: true,
+            },
           },
         ],
       },
@@ -38,5 +51,7 @@ module.exports = {
       template: './public/index.html',
       filename: './index.html',
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
+  devtool: 'source-map',
 };
