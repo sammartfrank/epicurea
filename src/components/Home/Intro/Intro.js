@@ -1,39 +1,45 @@
 import React from 'react';
-import styled from 'styled-components';
+import { AiOutlineRight } from 'react-icons/ai';
+import {
+  IntroContainer,
+  IntroWordingContainer,
+  DummyImage,
+  ReadButton,
+} from './styles';
 
-const IntroContainer = styled.div`
-  font-family: ${(props) => props.theme.fonts[1]};
-  position: relative;
-`;
-
-const IntroWordingContainer = styled.div`
-  width: 70%;
-  line-heigh: ${(props) => props.theme.fontStyle.WordingLineHeight};
-`;
-
-const DummyImage = styled.div`
-  width: 200px;
-  height: 350px;
-  background: grey;
-  position: absolute;
-  top: -100px;
-  left: 112px;
-  z-index: -2;
-`;
+const anchorStyle = {
+  color: 'black',
+  textDecoration: 'none',
+};
 
 const Intro = () => {
   return (
     <IntroContainer>
       <IntroWordingContainer>
         <p>
-          30 años de perfeccionamiento, elaborando los platos más sabrosos,
-          frescos y con la mejor calidad.
+          Y con cada cliente, esa búsqueda siempre está protagonizada por
+          <br />
+          <strong>sabores frescos con ingredientes de primera calidad.</strong>
         </p>
         <p>
-          Nuestra trayectoria nos dan hoy la confianza de muchas de las
-          instituciones y empresas más reconocidas del país.
+          Es lo que hoy nos da la confianza de muchas de las instituciones y
+          empresas más reconocidas del país. Con ese expertise te garantizamos
+          el momento de disfrute que estás buscando en cada comida.
+          <br />
+          <strong>Somos epicureísmo.</strong>
         </p>
       </IntroWordingContainer>
+      <ReadButton>
+        <a
+          href="https://www.silviabarredo.com"
+          target="_blank"
+          rel="noreferrer"
+          style={anchorStyle}
+        >
+          Leer Mas
+        </a>
+        <AiOutlineRight style={{ color: ' #FF0099' }} />
+      </ReadButton>
       <DummyImage />
     </IntroContainer>
   );

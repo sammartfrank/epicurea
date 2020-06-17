@@ -6,19 +6,23 @@ import Intro from './Intro/Intro';
 import Nexo from './Nexo/Nexo';
 import Contacto from './Contacto/Contacto';
 
-const HomeContainer = styled.div``;
+const HomeContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
 
 const Home = () => {
   return (
     <HomeContainer>
       <Hero />
-      <Section heading="Elaboramos sabores frescos con ingredientes de primera calidad.">
+      <Section heading="Buscamos el placer y el disfrute en todo lo que hacemos.">
         <Intro />
       </Section>
       <Section heading="Para cada ocasión hay Epicurea!">
         <Nexo />
       </Section>
-      <Section heading="Contactanos">
+      <Section heading="Contactanos!">
         <Contacto />
       </Section>
     </HomeContainer>

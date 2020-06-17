@@ -7,6 +7,7 @@
     "test": "test",
     "dev": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production",
+    "start": "webpack",
     "lint": "eslint --ignore-path .gitignore --fix",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json)\"",
     "format": "npm run prettier -- --write",

@@ -6,6 +6,7 @@ import EpicuForm from './Form';
 const ContactoContainer = styled.div`
   min-height: 120vh;
   font-family: ${(props) => props.theme.fonts[1]};
+  padding: 0px 24px 0px 24px;
 `;
 
 const ContactoWording = styled.p`

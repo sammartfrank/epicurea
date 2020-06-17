@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const SectionContainer = styled.div`
-  padding-right: 24px;
-  padding-left: 24px;
-  padding-top: 140px;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const HeadingContainer = styled.h1`
@@ -15,6 +15,8 @@ const HeadingContainer = styled.h1`
   width: 75%;
   font-weight: 900;
   text-align: left;
+  padding-left: 24px;
+  margin-bottom: 14px;
 `;
 
 const Section = ({ children, heading }) => {
