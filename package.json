@@ -2,12 +2,16 @@
   "name": "epicurea",
   "version": "1.0.0",
   "description": "Epicurea Web app",
+  "engines": {
+    "node": "10.20.1",
+    "npm": "6.14.5"
+  },
   "main": "index.js",
   "scripts": {
     "test": "test",
     "dev": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production",
-    "start": "webpack --mode production",
+    "start": "npm run validate",
     "lint": "eslint --ignore-path .gitignore --fix",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json)\"",
     "format": "npm run prettier -- --write",
