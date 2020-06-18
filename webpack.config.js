@@ -9,6 +9,7 @@ module.exports = {
     filename: '[name].bundle.js',
   },
   resolve: {
+    modules: [path.resolve('./'), path.resolve('./node_modules')],
     extensions: ['.js', '.jsx', '.json'],
   },
   module: {
@@ -40,6 +41,7 @@ module.exports = {
   },
   devServer: {
     hot: true,
+    contentBase: './dist',
     historyApiFallback: true,
     stats: {
       colors: true,
@@ -53,5 +55,5 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
-  devtool: 'source-map',
+  devtool: 'cheap-eval-source-map',
 };
