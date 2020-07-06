@@ -1,21 +1,36 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { bool } from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
-const MenuContainer = styled.div`
-  width: 100%;
-  background: white;
-`;
+import { MenuContainer } from './styles';
 
-const Menu = () => {
+const paths = [
+  { path: '/', name: 'HOME' },
+  { path: '/nosotros', name: 'NOSOTROS' },
+  { path: '/catering', name: 'CATERING' },
+  { path: '/contacto', name: 'CONTACTO' },
+];
+
+const activeStyle = {
+  borderBottom: `1px solid #E6327D`,
+};
+
+const Menu = ({ open }) => {
   return (
-    <MenuContainer>
-      <Link to="/">Home</Link>
-      <Link to="/contacto">Nosotros</Link>
-      <Link to="/eventos">Catering</Link>
-      <Link to="/contacto">Contacto</Link>
+    <MenuContainer open={open}>
+      {paths.map((el) => {
+        return (
+          <NavLink key={el.path} to={el.path} activeStyle={activeStyle}>
+            {el.name}
+          </NavLink>
+        );
+      })}
     </MenuContainer>
   );
+};
+
+Menu.propTypes = {
+  open: bool.isRequired,
 };
 
 export default Menu;

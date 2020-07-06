@@ -15,6 +15,16 @@ const theme = {
     HeadingLineHeight: '30px',
     WordingLineHeight: '19px',
   },
+  screenTypes: {
+    mobile: '360px',
+    tablet: '768px',
+    laptopS: '1260px',
+    laptop: '1440px',
+    laptopL: '2556px',
+  },
+  colors: {
+    primary: '#E6327D',
+  },
 };
 
 const Theme = ({ children }) => (

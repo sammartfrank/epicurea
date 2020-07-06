@@ -1,28 +1,30 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    index: './src/index.js',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
   },
-  resolve: {
-    modules: [path.resolve('./'), path.resolve('./node_modules')],
-    extensions: ['.js', '.jsx', '.json'],
-  },
+  target: 'web',
   module: {
     rules: [
       {
+        include: [path.resolve(__dirname, 'src')],
+        exclude: [path.resolve(__dirname, 'node_modules')],
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
         },
       },
       {
         test: /\.html$/,
+        exclude: /node_modules/,
         use: [
           {
             loader: 'html-loader',
@@ -33,9 +35,14 @@ module.exports = {
         ],
       },
       {
-        test: /\.(jpg|jpeg|png|gif|ico)$/,
+        test: /\.(jpg|jpeg|png|gif|svg|ico)$/i,
         exclude: /node_modules/,
-        loader: 'file-loader',
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+          },
+        ],
       },
     ],
   },
@@ -54,6 +61,7 @@ module.exports = {
       filename: './index.html',
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new BundleAnalyzerPlugin(),
   ],
-  devtool: 'cheap-eval-source-map',
+  // devtool: 'cheap-eval-source-map',
 };

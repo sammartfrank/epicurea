@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const FootContainer = styled.div`
   width: 100%;
   height: 35px;
-  background: #c4c4c4;
+  background: ${(props) => props.theme.colors.primary};
   display: flex;
   justify-content: space-between;
   padding: 24px;

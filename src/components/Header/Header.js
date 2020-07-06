@@ -1,27 +1,41 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
-// import loguito from '../../../assets/loguito.png';
-import pinklogo from '../../../assets/pinklogo.png';
 import Burger from './Burger/Burger';
+import Menu from './Menu/Menu';
 
 const HeaderContainer = styled.div`
-  height: 70px;
   width: 100%;
-  padding: 24px;
-  display: flex;
-  position: fixed;
-  z-index: 2;
-  align-items: center;
-  justify-content: space-between;
+  height: 70px;
   box-sizing: border-box;
-  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const ref = useRef(null);
+
+  const handleScroll = () => {
+    if (ref.current) {
+      const Axo = window.scrollY;
+      setScrolled(Axo > 750);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', () => handleScroll);
+    };
+  }, []);
+
   return (
-    <HeaderContainer>
-      <img src={pinklogo} alt="logo" />
-      <Burger />
+    <HeaderContainer ref={ref}>
+      <Burger open={open} setOpen={setOpen} />
+      <Menu open={open} setOpen={setOpen} />
     </HeaderContainer>
   );
 };

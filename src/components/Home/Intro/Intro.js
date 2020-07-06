@@ -16,18 +16,19 @@ const Intro = () => {
   return (
     <IntroContainer>
       <IntroWordingContainer>
-        <p>
+        <span>
           Y con cada cliente, esa búsqueda siempre está protagonizada por
           <br />
           <strong>sabores frescos con ingredientes de primera calidad.</strong>
-        </p>
-        <p>
+        </span>
+        <br />
+        <span>
           Es lo que hoy nos da la confianza de muchas de las instituciones y
           empresas más reconocidas del país. Con ese expertise te garantizamos
           el momento de disfrute que estás buscando en cada comida.
           <br />
           <strong>Somos epicureísmo.</strong>
-        </p>
+        </span>
       </IntroWordingContainer>
       <ReadButton>
         <a
@@ -38,7 +39,7 @@ const Intro = () => {
         >
           Leer Mas
         </a>
-        <AiOutlineRight style={{ color: ' #FF0099' }} />
+        <AiOutlineRight style={{ color: '#E6327D' }} />
       </ReadButton>
       <DummyImage />
     </IntroContainer>

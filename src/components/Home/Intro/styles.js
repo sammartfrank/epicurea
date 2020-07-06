@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import silvita from '../../../../assets/silvia1.png';
+import foodie from '../../../../assets/Silvia_3 1.png';
 
 export const IntroContainer = styled.div`
   font-family: ${(props) => props.theme.fonts[1]};
@@ -8,14 +9,22 @@ export const IntroContainer = styled.div`
 `;
 
 export const IntroWordingContainer = styled.div`
-  width: 70%;
-  line-heigh: ${(props) => props.theme.fontStyle.WordingLineHeight};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  span {
+    // line-height: ${(props) => props.theme.fontStyle.WordingLineHeight};
+    line-height: 50px;
+    background: white;
+    margin: 39px 0px;
+  }
 `;
 
 export const DummyImage = styled.div`
   width: 70%;
   min-height: 100vh;
-  background-image: url(${silvita});
+  background-image: url(${foodie});
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
@@ -30,7 +39,7 @@ export const ReadButton = styled.div`
   align-item: center;
   font-weight: 900;
   padding: 5px 0px 15px 0px;
-  border-bottom: 2px solid #ff0099;
+  border-bottom: 2px solid #e6327d;
 `;
 
 export const Divider = styled.div`

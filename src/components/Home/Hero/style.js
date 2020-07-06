@@ -1,12 +1,15 @@
 import styled from 'styled-components';
+import silvia from '../../../../assets/Libro-79 2.png';
 
 export const HeroContainer = styled.div`
-  min-height: 120vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: grey;
+  background: url(${silvia});
+  background-repeat: no-repeat;
+  background-size: contain;
 `;
 
 export const TextContainer = styled.div`

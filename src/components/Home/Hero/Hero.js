@@ -1,17 +1,18 @@
 import React from 'react';
 
-import logo from '../../../../assets/logo.png';
 import { HeroContainer, TextContainer } from './style';
+
+import logo from '../../../../assets/pinky.png';
 
 const Hero = () => {
   return (
     <HeroContainer>
       <img src={logo} alt="Epicurea" />
       <TextContainer>
-        <h5>
+        <h4>
           El catering de la cheff <br />
-          Silvia Barredo.
-        </h5>
+          <strong>Silvia Barredo.</strong>
+        </h4>
       </TextContainer>
     </HeroContainer>
   );
